@@ -18,7 +18,7 @@ pipeline {
                 stage('secret-check') {
                     steps {
                         sh 'rm trufflehog || true'
-                        sh 'docker run --rm gesellix/trufflehog --json https://github.com/tuanklnew/BenchmarkJava.git |& tee trufflehog'
+                        sh 'docker run --rm gesellix/trufflehog --json https://github.com/tuanklnew/webapp.git |& tee trufflehog'
                         sh 'cat trufflehog'
                     }
                 }
